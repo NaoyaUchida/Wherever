@@ -20,8 +20,9 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 660px;
-    z-index: 10;
+    height: 700px;
+    z-index: 300;
+    background: -webkit-linear-gradient(bottom,rgba(246,246,246,0.3),rgba(0,0,0,0.3));
 }
 
 .header-left {
@@ -35,11 +36,19 @@ a {
     letter-spacing: 2px;
     text-shadow: 2px 1px 1px #4A4A4A;
     font-weight: 300;
+    float: left;
 }
 
 .header-left-link:hover {
-    color: #00FF2B;
-    text-shadow: 2px 2px 5px #B1B1B1;
+    -webkit-animation: titleAnime 0.5s ease-in 0.2s;
+}
+
+@keyframes titleAnime {
+    0% { transform : scaleX(0) }
+    25% { transform : scaleX(-0.5) }
+    50% { transform : scaleX(-1) }
+    75% { transform : scaleX(-0.5) }
+    100% { transform : scaleX(0) }
 }
 
 .header-right {
@@ -66,7 +75,7 @@ a {
 
 .main-image {
     width: 100%;
-    height: 660px;
+    height: 700px;
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -75,10 +84,14 @@ a {
 
 .main-image-box {
     width: 100%;
-    height: 660px;
+    height: 700px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+}
+
+.main-image-list {
+    background-color: rgba(0,0,0,0.6);
 }
 
 .main-image-list:nth-child(2),.main-image-list:nth-child(3),.main-image-list:nth-child(4),.main-image-list:nth-child(5),.main-image-list:nth-child(6) {
@@ -88,7 +101,7 @@ a {
 .main-image-list img {
     display: block;
     width: 100%;
-    height: 660px;
+    height: 700px;
     position: absolute;
     top: 0;
     left: 0;
@@ -102,10 +115,11 @@ a {
 
 .main-image-overlay {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
+    height: 60px;
+    position: relative;
+    top: 0;
     left: 0;
+    right: 0;
     background: url("../img/mainVisual-overlay.png") no-repeat;
     background-size: contain;
     background-position: 0 bottom;
@@ -114,7 +128,7 @@ a {
 .arrow-box {
     position: absolute;
     left: 48%;
-    bottom: 20px;
+    bottom: 65px;
     width: 40px;
     height: 25px;
     text-align: center;
@@ -122,9 +136,9 @@ a {
 }
 
 @keyframes arrow {
-    0% { bottom: 20px; }
-    50% { bottom: 35px; }
-    100% { bottom: 20px; }
+    0% { bottom: 65px; }
+    50% { bottom: 95px; }
+    100% { bottom: 65px; }
 }
 
 .arrow-box-inner {
@@ -139,7 +153,7 @@ a {
     width: 100%;
     z-index: 300;
     position: absolute;
-    top: 660px;
+    top: 620px;
 }
 
 .section-about {
@@ -172,6 +186,7 @@ a {
     padding: 30px 50px;
     border-top: 1px solid #D6D6D6;
     border-bottom: 1px solid #D6D6D6;
+    background-color: rgba(0,0,0,0.3);
 }
 
 .section-contents-header ul {
@@ -188,6 +203,7 @@ a {
     color: #FFF;
     letter-spacing: 2px;
     text-shadow: 2px 1px 1px #4A4A4A;
+    font-weight: 300;
 }
 
 .country-link:hover {
@@ -202,19 +218,22 @@ a {
 }
 
 .photos-list-child {
-    background: -webkit-linear-gradient(bottom,rgba(255,255,255,1),rgba(0,0,0,0.7));
+    min-height: 700px;
+    height: 100%;
+    background: -webkit-linear-gradient(bottom,#FFF,#6F6F6F);
+    z-index: 200;
 }
 
 .photos-list-inner {
-    padding: 30px 0 10px;
+    padding: 30px 4px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
 
 .photos-lineup {
     float: left;
-    width: 212px;
-    height: 282px;
+    width: 30%;
+    height: 500px;
     margin: 0 20px 30px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -224,6 +243,30 @@ a {
 .photos-lineup a{
     display: block;
     position: relative;
+    overflow: hidden;
+}
+
+.photos-lineup span{
+    display: block;
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+    position:absolute;
+    -webkit-animation: effect-animation 2s;
+    background-color: rgba(255,255,255,0.8);
+}
+
+@-webkit-keyframes effect-animation {
+    from {
+        -webkit-transform: scale(1);
+        opacity: 0.4;
+    }
+    to {
+        -webkit-transform: scale(100);
+        opacity: 0;
+    }
 }
 
 .photos-lineup img {
@@ -262,8 +305,8 @@ footer {
 }
 
 .footer-contents {
-    background-color: rgba(0,0,0,0.7);
-    padding: 40px 50px;
+    background-color: #6F6F6F;
+    padding: 30px 50px;
 }
 
 .footer-left {
@@ -274,6 +317,7 @@ footer {
     color: #FFF;
     font-size: 25px;
     letter-spacing: 2px;
+    font-weight: 300;
 }
 
 .footer-right {
@@ -292,6 +336,22 @@ footer {
 
 .footer-menu-link {
     color: #FFF;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.footer-contents-bottom {
+    background-color: #2F2F2F;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.footer-contents-bottom p {
+    color: #FFF;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 header {
@@ -307,6 +367,7 @@ header {
     padding: 30px 50px;
     border-top: 1px solid #D6D6D6;
     border-bottom: 1px solid #D6D6D6;
+    overflow: hidden;
 }
 
 .header-contents ul {
@@ -327,6 +388,32 @@ header {
     color: #FFF;
     letter-spacing: 2px;
     text-shadow: 2px 1px 1px #4A4A4A;
+    font-weight: 300;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-menu-link span{
+    display: block;
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+    position:absolute;
+    -webkit-animation: effect-animation 2s;
+    background-color: rgba(255,255,255,0.5);
+}
+
+@-webkit-keyframes effect-animation {
+    from {
+        -webkit-transform: scale(1);
+        opacity: 0.4;
+    }
+    to {
+        -webkit-transform: scale(100);
+        opacity: 0;
+    }
 }
 
 .pageTop {
@@ -334,7 +421,7 @@ header {
     z-index: 400;
     width: 40px;
     height: 40px;
-    background-color: rgba(169,169,169,0.7);
+    background-color: rgba(0,0,0,0.5);
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -350,4 +437,81 @@ header {
 .pageTopLink img{
     transform: rotate(180deg);
     width: 18px;
+}
+
+.photo-detail-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.overlay-photo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: -webkit-center;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.overlay-photo-inner {
+    width: 75%;
+}
+
+.overlay-photo img {
+    width: 100%;
+}
+
+.overlay-photo-prev {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 30px;
+    cursor: pointer;
+}
+
+.overlay-photo-prev img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+.overlay-photo-next {
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    right: 30px;
+}
+
+.overlay-photo-next img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    transform: rotate(270deg);
+}
+
+.overlay-quit {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.overlay-quit img {
+    display: block;
+    width: 20px;
 }

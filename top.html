@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Wherever</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="js/wherever.js"></script>
 </head>
@@ -22,12 +22,11 @@
                     <li><a href="javascript:void(0);" class="menu-link js_moveContents">CONTENTS</a></li>
                     <li><a href="javascript:void(0);" class="menu-link">CONTACT</a></li>
                 </ul>
-                <div class="main-image-overlay"></div>
-                <div class="arrow-box">
-                    <a id="downMenu" class="arrow-box-inner" href="javascript:void(0);">
-                        <img src="img/mainVisual-arrow.png" alt="arrow"/>
-                    </a>
-                </div>
+            </div>
+            <div class="arrow-box">
+                <a id="downMenu" class="arrow-box-inner" href="javascript:void(0);">
+                    <img src="img/mainVisual-arrow.png" alt="arrow"/>
+                </a>
             </div>
         </div>
         <div class="main-image">
@@ -55,6 +54,8 @@
             </div>
         </div>
         <div class="main-contents">
+
+            <div class="main-image-overlay"></div>
             <section class="section-about">
                 <div class="section-about-inner">
                     <div class="section-about-title">
@@ -77,7 +78,7 @@
                     </ul>
                 </div>
                 <div class="photos-list clearfix">
-
+                    <div class="photos-list-child"></div>
                 </div>
             </section>
             <footer>
@@ -88,34 +89,47 @@
                     <div class="footer-right clearfix">
                         <ul class="clearfix">
                             <li class="footer-menu"><a class="footer-menu-link" href="top.html">TOP</a></li>
-                            <li class="footer-menu"><a class="footer-menu-link" href="javascript:void(0);">ABOUT</a></li>
-                            <li class="footer-menu"><a class="footer-menu-link" href="javascript:void(0);">CONTENTS</a></li>
+                            <li class="footer-menu"><a class="footer-menu-link js_moveAbout" href="javascript:void(0);">ABOUT</a></li>
+                            <li class="footer-menu"><a class="footer-menu-link js_moveContents" href="javascript:void(0);">CONTENTS</a></li>
                             <li class="footer-menu"><a class="footer-menu-link" href="javascript:void(0);">CONTACT</a></li>
                         </ul>
                     </div>
-                    <div class="footer-info">
-                        <p></p>
-                    </div>
+                </div>
+                <div class="footer-contents-bottom">
+                    <p>We thank you for visiting our site!</p>
                 </div>
             </footer>
         </div>
         <header>
             <div class="header-contents">
                 <ul>
-                    <li class="header-menu-list"><a class="header-menu-link" href="top.html">TOP</a></li>
-                    <li class="header-menu-list"><a class="header-menu-link" href="javascript:void(0);">ABOUT</a></li>
-                    <li class="header-menu-list"><a class="header-menu-link" href="javascript:void(0);">CONTENTS</a></li>
+                    <li class="header-menu-list"><a class="header-menu-link js_moveTop" href="javascript:void(0);">TOP</a></li>
+                    <li class="header-menu-list"><a class="header-menu-link js_moveAbout" href="javascript:void(0);">ABOUT</a></li>
+                    <li class="header-menu-list"><a class="header-menu-link js_moveContents" href="javascript:void(0);">CONTENTS</a></li>
                     <li class="header-menu-list"><a class="header-menu-link" href="javascript:void(0);">CONTACT</a></li>
                 </ul>
             </div>
         </header>
-        <div class="pageTop">
+        <div id="pageTop" class="pageTop">
             <a class="pageTopLink" href="javascript:void(0)">
                 <img src="img/mainVisual-arrow.png" alt="arrow"/>
             </a>
         </div>
-        <div>
-
+        <div class="photo-detail-overlay">
+            <div class="overlay-photo">
+                <div class="overlay-photo-inner">
+                    <img src="photos/Japan/PA204305.jpg" alt="sceneImg"/>
+                </div>
+            </div>
+            <div id="overlay-photo-prev" class="overlay-photo-prev">
+                <img src="img/mainVisual-arrow.png" alt="arrow"/>
+            </div>
+            <div id="overlay-photo-next" class="overlay-photo-next">
+                <img src="img/mainVisual-arrow.png" alt="arrow"/>
+            </div>
+            <div id="overlay-quit" class="overlay-quit">
+                <img src="img/markquit.png" alt="arrow"/>
+            </div>
         </div>
     </div>
 </body>
