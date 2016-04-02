@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4dfcf162-4ac7-4aa6-a565-8a42a9c94509" name="MyVagrant" url="http://192.168.33.10/Wherever">
+        <fileTransfer host="192.168.33.10" port="22" rootFolder="/var/www/html/Wherever" accessType="SFTP" password="dfdcdfcbdfcddfd8dfcbdfc4dfde" username="vagrant">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
