@@ -38,6 +38,17 @@ $(function(){
 });
 
 $(function() {
+    var $countryLink = $(".country-link");
+
+    $countryLink.click(function() {
+        var index = $countryLink.index(this);
+
+        $countryLink.removeClass("countryLinkHover");
+        $countryLink.eq(index).addClass("countryLinkHover");
+    });
+});
+
+$(function() {
     //windowの変数定義
     var $window = window;
 
@@ -81,13 +92,13 @@ $(function() {
     buttonTouchEffect(".header-menu-link");
 
     $("#downMenu").click(function() {
-        $("html,body").animate({scrollTop:$(".section-about").offset().top},"fast");
+        $("html,body").animate({scrollTop:$(".section-about").offset().top - 20},"fast");
     });
     $(".js_moveTop").click(function() {
         $("html,body").animate({scrollTop:$("body").offset().top},"fast");
     });
     $(".js_moveAbout").click(function() {
-        $("html,body").animate({scrollTop:$(".section-about").offset().top},"fast");
+        $("html,body").animate({scrollTop:$(".section-about").offset().top - 20},"fast");
     });
     $(".js_moveContents").click(function() {
         $("html,body").animate({scrollTop:$(".section-contents").offset().top - 82},"fast");
@@ -111,7 +122,7 @@ $(function() {
 
 $(function() {
     $(window).scroll(function() {
-        if($("body").scrollTop() >= $(".section-about").offset().top) {
+        if($("body").scrollTop() >= $(".section-about").offset().top - 20) {
             $("header").slideDown();
             $("#pageTop").fadeIn("fast");
         } else {

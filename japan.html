@@ -282,14 +282,6 @@
     </li>
     <li class="photos-lineup">
         <a class="photos-lineup-link" href="javascript:void(0);">
-            <img src="photos/Japan/IMG_1007.jpg" alt="sceneImg"/>
-            <div class="photo-overlay">
-                <p>NaganoPref.</p>
-            </div>
-        </a>
-    </li>
-    <li class="photos-lineup">
-        <a class="photos-lineup-link" href="javascript:void(0);">
             <img src="photos/Japan/IMG_2142.jpg" alt="sceneImg"/>
             <div class="photo-overlay">
                 <p>KyotoPref.</p>
@@ -360,20 +352,18 @@
             </div>
         </a>
     </li>
+    <li class="photos-lineup">
+        <a class="photos-lineup-link" href="javascript:void(0);">
+            <img src="photos/Japan/IMG_1007.jpg" alt="sceneImg"/>
+            <div class="photo-overlay">
+                <p>NaganoPref.</p>
+            </div>
+        </a>
+    </li>
 </ul>
 <script>
-//    $(function() {
-//        var $photosHeight = $(".photos-lineup img").height();
-//        console.log($photosHeight);
-//        if($imgHeight < 286) {
-//            $photosLineup.css("height","400px");
-//        }else {
-//            $photosLineup.css("height","500px");
-//        }
-//    });
-
     $(function() {
-        var windowTop = $(window).scrollTop(),
+        var windowTop,
             $window = window,
             $photosLink = $(".photos-lineup-link");
 
@@ -408,12 +398,15 @@
                 }, 1000);
 
                 setTimeout(function () {
-                    var photosSrc = $(".photos-lineup-link img").eq(index).attr("src"),
-                        windowTop = $(window).scrollTop(),
-                        animateTop = {
-                            position: "fixed",
-                            top: "-" + windowTop + "px"
-                        };
+                    photosSrc = $(".photos-lineup-link img").eq(index).attr("src");
+                    windowTop = $("body").scrollTop();
+                    animateTop = {
+                        position: "fixed",
+                        width: "100%",
+                        top: -1 *  windowTop
+                    };
+
+                    $(".wrapper").css(animateTop);
 
                     $(".photo-detail-overlay").fadeIn();
 
@@ -425,14 +418,17 @@
                         $(".overlay-photo-inner").css("width","72%");
                     }
 
-                    $(".wrapper").css(animateTop);
+                    $(".overlay-photo img").animate({scale:"1"},200);
+
                 }, 700);
             });
 
         $("#overlay-quit").click(function () {
 
-            $(".wrapper").attr("style","");
-            $(window).scrollTop(windowTop);
+            $(".wrapper").attr({style:""});
+            $("body").prop({ scrollTop : windowTop });
+
+            $(".overlay-photo img").animate({scale:"0.1"},200);
 
             $(".photo-detail-overlay").fadeOut();
         });
